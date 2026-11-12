@@ -132,3 +132,49 @@
 -- UPDATE zadanie 
 -- SET sprint = 1
 -- WHERE id_zadania = 2 ;
+
+-- ZADANIE 5 -----------------------------------------
+
+-- CREATE TABLE status(
+-- 	is_statusu int PRIMARY KEY auto_increment,
+--     nazwa_statusu varchar(20)
+-- );
+
+-- INSERT INTO status VALUES (
+-- 1,"w trakcie"),
+-- (2, "zrobione"),
+-- (3, "do zrobienia");
+
+-- CREATE TABLE zadanie_has_status(
+-- 	id_zdarzenia int primary key auto_increment,
+--     id_zadania int,
+--     id_statusu int,
+--     data_zdarzenia datetime default current_timestamp,
+--     foreign key(id_zadania) references zadanie(id_zadania),
+--     foreign key(id_statusu) references status(is_statusu)
+-- )
+
+-- alter table status
+-- rename column is_statusu to id_statusu
+
+-- INSERT INTO zadanie_has_status VALUES
+-- 	(1,1,1,default),
+--     (2,2,1,default),
+--     (3,3,2,default);
+
+-- ALTER TABLE zadanie_has_status
+-- add foreign key (id_zadania) references zadanie(id_zadania) on delete cascade
+
+-- DELETE FROM projekt WHERE id_projektu = 1;
+
+-- ALTER TABLE zadanie
+-- drop constraint zadanie_ibfk_4;
+-- DROP TABLE sprint;
+
+
+
+
+
+
+
+
